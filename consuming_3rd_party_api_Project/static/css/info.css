@@ -1,0 +1,31 @@
+#center{
+  text-align: center;
+  padding-top: 15%;
+}
+body{
+  background: url(https://farm9.staticflickr.com/8079/8279355445_d83e9b80c4_o.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#tc{
+  color: yellow;
+  font-weight: 700;
+  font-size: 5em;
+}
+#tc1{
+  color: #FFF59D;
+}
+#tc2{
+  color: #FFF59D;
+  font-size: 40px;
+  border: 1px solid #FFF59D;
+}
+
+html{
+  height: 100%;
+}
+hr{
+  width: 500px;
+  background-color: #FFF59D;
+}

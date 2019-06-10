@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/info2.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+  <body class="custom-table-class">
+    <div class="container">
+      <table class="table table-bordered">
+  <thead style="color:yellow; font-size:40px;">
+    <tr>
+      <th scope="col">Sno.</th>
+      <th scope="col">Description</th>
+      <th scope="col">Result</th>
+    </tr>
+  </thead>
+  <tbody style="color:#FFF59D;">
+    <tr>
+      <th scope="row">1</th>
+      <td>The requested IP address</td>
+      <td>{{ip}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>The IP address type ( IPv4 or IPv6 )</td>
+      <td>{{type}}</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>CONTINENT CODE associated with the IP</td>
+      <td>{{continent_code}}</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>The name of the CONTINENT associated with the IP</td>
+      <td>{{continent_name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>COUNTRY CODE associated with the IP</td>
+      <td>{{country_code}}</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>The name of the COUNTRY associated with the IP</td>
+      <td>{{country_name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>The REGION CODE of the region associated with the IP (e.g. CA for California)</td>
+      <td>{{region_code}}</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>The name of the REGION associated with the IP</td>
+      <td>{{region_name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>The name of the CITY associated with the IP</td>
+      <td>{{city}}</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>The ZIP CODE associated with the IP</td>
+      <td>{{zip}}</td>
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>The LATITUDE value associated with the IP</td>
+      <td>{{latitude}}</td>
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>The LONGITUDE value associated with the IP</td>
+      <td>{{longitude}}</td>
+    </tr>
+    <tr>
+      <th scope="row">13</th>
+      <td>The unique GEONAME IDENTIFIER in accordance with the Geonames Registry</td>
+      <td>{{location.geoname_id}}</td>
+    </tr>
+    <tr>
+      <th scope="row">14</th>
+      <td>The CAPITAL CITY of the country associated with the IP</td>
+      <td>{{location.capital}}</td>
+    </tr>
+    {% for loc in location.languages %}
+    <tr>
+      <th scope="row">15*</th>
+      <td>Language spoken CODE in the country associated with the IP</td>
+      <td>{{loc.code}}</td>
+    </tr>
+    <tr>
+      <th scope="row">15*</th>
+      <td>The NAME (request's main language) of the language. (e.g. Portuguese)</td>
+      <td>{{loc.name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">15*</th>
+      <td>The NATIVE name of the language. (e.g. Português)</td>
+      <td>{{loc.native}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th scope="row">16</th>
+      <td>The COUNTRY FLAG associated with the IP</td>
+      <td><img style="height:50px; width:150px;" src="{{location.country_flag}}" alt="Image will be uploaded soon"</td>
+    </tr>
+    <tr>
+      <th scope="row">17</th>
+      <td>The emoji icon for the FLAG of the country associated with the IP</td>
+      <td>{{location.country_flag_emoji}}</td>
+    </tr>
+    <tr>
+      <th scope="row">18</th>
+      <td>The UNICODE VALUE of the emoji icon for the flag of the country associated with the IP</td>
+      <td>{{location.country_flag_emoji_unicode}}</td>
+    </tr>
+    <tr>
+      <th scope="row">19</th>
+      <td>The CALLING/DIAL CODE of the country associated with the IP. (e.g. 351) for Portugal</td>
+      <td>{{location.calling_code}}</td>
+    </tr>
+    <tr>
+      <th scope="row">20</th>
+      <td>The country associated with the IP is in the EUROPEAN UNION</td>
+      <td>{{location.is_eu}}</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </body>
+</html>
